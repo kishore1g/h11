@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Resume of kishore</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+      integrity="sha512-c93ifPoTvMdEJH/rKIcBx//AL1znq9+4/RmMGafI/vnTFe/dKwnn1uoeszE2zJBQTS1Ck5CqSBE+34ng2PthJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- styles css -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      /*
+    =============== 
+    Variables
+    ===============
+    */
+    
+         :root {
+        /* dark shades of primary color*/
+        --clr-primary-1: hsl(184, 91%, 17%);
+        --clr-primary-2: hsl(185, 84%, 25%);
+        --clr-primary-3: hsl(185, 81%, 29%);
+        --clr-primary-4: hsl(184, 77%, 34%);
+        /* primary/main color */
+        --clr-primary-5: hsl(185, 62%, 45%);
+        /* lighter shades of primary color */
+        --clr-primary-6: hsl(185, 57%, 50%);
+        --clr-primary-7: hsl(184, 65%, 59%);
+        --clr-primary-8: hsl(184, 80%, 74%);
+        --clr-primary-9: hsl(185, 94%, 87%);
+        --clr-primary-10: hsl(186, 100%, 94%);
+        /* darkest grey - used for headings */
+        --clr-grey-1: hsl(209, 61%, 16%);
+        --clr-grey-2: hsl(211, 39%, 23%);
+        --clr-grey-3: hsl(209, 34%, 30%);
+        --clr-grey-4: hsl(209, 28%, 39%);
+        /* grey used for paragraphs */
+        --clr-grey-5: hsl(210, 22%, 49%);
+        --clr-grey-6: hsl(209, 23%, 60%);
+        --clr-grey-7: hsl(211, 27%, 70%);
+        --clr-grey-8: hsl(210, 31%, 80%);
+        --clr-grey-9: hsl(212, 33%, 89%);
+        --clr-grey-10: hsl(210, 36%, 96%);
+        --clr-white: #fff;
+        --ff-primary: "Lato", sans-serif;
+        --transition: all 0.3s linear;
+        --spacing: 0.25rem;
+        --radius: 0.5rem;
+        --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      /*
+    =============== 
+    Global Styles
+    ===============
+    */
+    
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        background: var(--clr-white);
+        color: var(--clr-grey-1);
+        line-height: 1.5;
+        font-size: 0.875rem;
+      }
+      ul {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      img:not(.nav-logo) {
+        width: 100%;
+        display: block;
+      }
+    
+      h1,
+      h2,
+      h3,
+      h4 {
+        letter-spacing: var(--spacing);
+        text-transform: capitalize;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+      }
+      h3 {
+        font-size: 1.25rem;
+       /*  margin-bottom: 0rem; */
+      }
+      h4 {
+        font-size: 0.875rem;
+      }
+      p {
+        margin-bottom: 0.55rem;
+        color: var(--clr-grey-5);
+      }
+      /*  global classes */
+    
+      .btn {
+        text-transform: uppercase;
+        background: var(--clr-primary-5);
+        color: var(--clr-white);
+        padding: 0.375rem 0.75rem;
+        letter-spacing: var(--spacing);
+        display: inline-block;
+        font-weight: 700;
+        transition: var(--transition);
+        font-size: 0.875rem;
+        border: 2px solid transparent;
+        cursor: pointer;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+      .btn:hover {
+        color: var(--clr-primary-1);
+        background: var(--clr-primary-8);
+      }
+      /* section */
+      .section {
+        padding: 5rem 0;
+        scroll-margin-top: 0.7 rem;/* 4 rem acually*/
+     }
+      .section-title {
+        text-align: center;/*center or change the title of the about and all*/
+        margin-bottom: 2.5rem;
+      }
+      .section-title h2 {
+        text-transform: uppercase;
+      }
+      .section-title span {
+        color: var(--clr-primary-5);
+      }
+      .section-center {
+        width: 90vw;
+        margin: 0 auto;
+        max-width: 1170px;
+      }
+    
+      /*
+    =============== 
+    Hero
+    ===============
+    */
+    
+      .hero {
+        min-height: 100vh;
+        background: var(--clr-primary-5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/1200px-A_black_image.jpg")
+            center/cover no-repeat;
+      }
+      .hero-banner {
+        text-align: center;
+        color: var(--clr-white);
+        padding: 0 3rem;
+      }
+      .hero-banner h1 {
+        text-transform: uppercase;
+      }
+      .hero-banner p {
+        max-width: 35rem;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--clr-white);
+        letter-spacing: var(--spacing);
+      }
+      .hero-btn {
+        padding: 0.9rem 1.6rem;
+        font-size: 1.25rem;
+        background: var(--clr-white);
+        color: var(--clr-primary-5);
+      }
+      .hero-btn:hover {
+        background: transparent;
+        color: var(--clr-white);
+        border-color: var(--clr-white);
+      }
+    
+      /*
+    =============== 
+    About
+    ===============
+    */
+      /* section added to globals */
+      /* title added to globals */
+      /* section center added to globals */
+    
+      .about-center {
+        min-height: 60vh;
+        display: flex;/* .............................. grid AS FLEX  */
+        grid-template-columns: 0.3fr 0.3fr;
+       column-gap: 2rem;
+       min-width:20vh;
+      }
+     /*  .about-img {
+        position: relative;
+        overflow: hidden;
+      }
+       */
+.about-img img {
+  width: 40%;
+  height: 10%;
+  display: block;
+  border-radius: 50%; /* Add this line for a circular shape */
+}
+    
+    /*   .about-img {
+        position: relative;
+      } */
+    ol {
+      list-style-type: disc;    /* /  about */
+    }
+      /*
+    =============== 
+    Services
+    ===============
+    */
+      .services {
+        background: var(--clr-grey-10);
+      }
+      .service {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      .service-icon {
+        background: var(--clr-primary-5);
+        color: var(--clr-primary-1);
+        padding: 0.5rem;
+        display: inline-block;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .service-text {
+        max-width: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .service {
+        display: flex;
+        text-align: left;
+      }
+      .service-icon {
+        align-self: start;
+      }
+      .service-info {
+        padding-left: 1rem;
+      }
+      .service-title {
+        margin-bottom: 0.5rem;
+      }
+      .services-center {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+      }
+    
+      /*
+    =============== 
+    Featured Tours
+    ===============
+    */
+    
+      .tour-card {
+        transition: var(--transition);
+        background: var(--clr-grey-10);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+      .tour-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+      }
+      .tour-img-container {
+        position: relative;
+      }
+      .tour-img {
+        height: 15rem;
+        object-fit: cover;
+      }
+      /* .tour-date {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: var(--clr-primary-8);
+      color: var(--clr-primary-1);
+      text-transform: capitalize;
+      padding: 0.25rem 0.5rem;
+      margin-bottom: 0;
+    } */
+      .tour-info {
+        padding: 1.25rem 1.5rem;
+      }
+      /* additional css for different layout*/
+      .tour-title {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .tour-title p,
+      .tour-title h4 {
+        margin-bottom: 0.75rem;
+        line-height: 1.25;
+      }
+      .tour-title p {
+        color: var(--clr-grey-7);
+      }
+      /* end of additional css for different layout*/
+      .tour-footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .tour-footer p {
+        line-height: 0;
+        margin-bottom: 0;
+        text-transform: capitalize;
+        color: var(--clr-primary-5);
+      }
+      .tour-footer p span {
+        margin-right: 0.25rem;
+      }
+      .tour-btn {
+        text-align: center;
+      }
+    
+      .featured-center {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+      }
+    
+      /*
+    =============== 
+    Footer
+    ===============
+    */
+      .footer {
+        background: var(--clr-grey-1);
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      .footer-links,
+      .footer-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+      }
+      .footer-link {
+        color: var(--clr-white);
+        text-transform: capitalize;
+        font-size: 1rem;
+        margin-right: 1rem;
+        letter-spacing: var(--spacing);
+        transition: var(--transition);
+      }
+      .footer-link:hover {
+        color: var(--clr-primary-5);
+      }
+      .footer-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+        color: var(--clr-white);
+        transition: var(--transition);
+      }
+      .footer-icon:hover {
+        color: var(--clr-primary-5);
+      }
+      .copyright {
+        text-transform: capitalize;
+        letter-spacing: var(--spacing);
+        color: var(--clr-white);
+      }
+      .copyright span {
+        margin-left: 0.5rem;
+      }
+      /*
+    =============== 
+    Navbar
+    ===============
+    */
+       /* add :not(.nav-logo) to img  */
+    
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--clr-white);
+        box-shadow: var(--dark-shadow);
+        z-index: 2;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+      }
+      .nav-icons {
+        display: none;
+      }
+      .nav-center {
+        width: 90vw;
+        max-width: 1170px;
+        margin: 0 auto;
+      }
+      .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .nav-toggle {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+        color: var(--clr-primary-5);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      .nav-toggle:hover {
+        transform: scale(1.2);
+      }
+      .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+        text-transform: capitalize;
+        letter-spacing: var(--spacing);
+        transition: var(--transition);
+        color: var(--clr-grey-1);
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .nav-link:hover {
+        color: var(--clr-primary-1);
+        background: var(--clr-primary-8);
+        padding-left: 2.25rem;
+      }
+      /* nav toggle functionality */
+      .nav-links {
+        height: 0;
+        overflow: hidden;
+        transition: var(--transition);
+      }
+      .show-links {
+        height: 280px;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+      /* show links */
+      .nav-links {
+        height: auto;
+        display: flex;
+      }
+      .nav-center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* optional */
+        flex-wrap: wrap;
+      }
+      .nav-header {
+        padding: 0 0;
+      }
+      .nav-link {
+        padding: 0 0;
+      }
+      .nav-link:hover {
+        padding: 0;
+        color: var(--clr-primary-5);
+        background: transparent;
+      }
+      .nav-icons {
+        display: flex;
+      }
+
+      .nav-link {
+        margin-right: 0.7rem;
+      }
+      .nav-icon {
+        margin-right: 0.7rem;
+        color: var(--clr-primary-5);
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+      .nav-icon:hover {
+        color: var(--clr-primary-8);
+      }
+
+      /* hero */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        background-color: aqua;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-banner {
+        text-align: center;
+        color: white;
+        padding: 0 3 rem;
+      }
+
+      .hero-banner h1 {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <h1>G.Kishore</h1>
+          <button type="button" class="nav-toggle" id="nav-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <!-- left this comment on purpose -->
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a href="#home" class="nav-link">Career-Objective</a>
+          </li>
+
+          <li>
+            <a href="#about" class="nav-link"> about </a>
+          </li>
+
+          <li>
+            <a href="#services" class="nav-link"> Technical-Skills </a>
+          </li>
+
+          <li>
+            <a href="#tours" class="nav-link"> Projects</a>
+          </li>
+        </ul>
+
+        <ul class="nav-icons">
+          <li>
+            <a href="https://www.instagram.com/the.javatalks/#" target="_blank" class="nav-icon"
+              ><i class="fab fa-instagram"></i
+             ></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/kishore-gudla-64b177251" target="_blank" class="nav-icon"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </li>
+          <li>
+            <a href="https://github.com/kishore1g" target="_blank" class="nav-icon"
+              ><i class="fab fa-github"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+<!-- //.................................carrer objective.................................................... -->
+    <section class="hero" id="home">
+      <div class="hero-banner">
+        <!-- <h2>CAREER OBJECTIVE</h2> -->
+<div class="content">
+ <br>
+<br>
+<br>
+<h2>CAREER OBJECTIVE</h2>
+
+        <p>Aspiring to work in a well reputed organization where I can get the scope to improve my skills and improving 
+         my knowledge with a good team suchthat I can use those efforts for the development of the organization.</p>
+<h3>HIRE ME</h3> 
+<p>
+I am a proactive undergraduate with a strong foundation in frontend technologies (HTML, CSS, JavaScript, Bootstrap) 
+and backend expertise in Java and C.Proficient in SQL and PLSQL for database management, I stay current with AI advancements
+. My unique blend of creativity and logical thinking enables innovative problem-solving. Beyond technical skills, 
+I offer effective communication, presentation, and time management abilities. Eager to contribute as a Fullstack Java Developer, 
+I bring a valuable combination of technical expertise and dedication to any forward-thinking organization. <br><font size="5" color="#ffffff"><strong><u>FULLSTACK JAVA DEVELOPER</u></strong></font>.</strong></font></pre></p>
+</div>
+       <a href="#tours" class="btn hero-btn">Explore MY Projects</a>
+      </div>
+    </section>
+<!-- //.....................................about.............................................................................................. -->
+    <section class="section" id="about">
+      <div class="section-title">
+        <h2>about<span>me</span></h2>
+      </div>
+      <div class="section-center about-center">
+        <div class="about-img">
+
+       <figure>
+          <img
+            src="./image/KISHOREIMG.jpeg"
+            class="about-photo"
+            alt="img kishore"
+          />
+       <br>
+       <figcaption><h5>Hello i'm</h5>
+          <h3>Kishore</h3>
+          <p>
+<pre>
+Enthusiastic and highly motivated
+Computer Science graduate with a 
+Bachelor's degree in Computer Science
+and Engineering.
+Adept at [java,html,css,java Script,sql,pl/sql..].
+Eager to apply academic knowledge and practical 
+skills gained through internships and coursework 
+to contribute to dynamic projects in a professional
+environment.      
+</pre></p>
+</figcaption>
+       </figure>
+
+        </div>
+        <article class="about-info">
+  <!-- <div id="flex"> 
+  <div> -->
+<h3> Education Background  <i class="fas fa-graduation-cap"></i></h3>
+<ol>
+	<li><strong><font size="3" color="#990000">BACHELORE OF TECHNOLOGY   .<i class="fas fa-user-graduate"></i></i></font></strong></li><ul>
+	<li><STRONG>COLLEGE :</STRONG>Sri Sivani College Of Engineering.</li>
+<li><strong>STREAM:</strong>Computre Science And Engineering</li>
+<li><strong>YEAR OF COMPLETION:</strong> 2023</li>
+<li><STRONG>University/Board: </STRONG>JNTUGV</li>
+</ul>
+</ol>
+<hr color="#33ffff" width="60%">
+<ol>
+	<li><strong><font size="3" color="#990000">INTERMEDIATE</font></strong></li><ul>
+	<li><STRONG>COLLEGE :</STRONG>Sri Tamminaidu Junior College</li>
+<li><strong>STREAM:</strong>MPC</li>
+<li><strong>YEAR OF COMPLETION:</strong>2019</li>
+<li><STRONG>University/Board: </STRONG>State Board Ahdhra Pradesh</li>
+</ul>
+</ol>
+<hr color="#33ffff" width="60%">
+<ol>
+<li><strong><font size="3" color="#990000">S.S.C</font></strong></li><ul>
+	<li><STRONG>SCHOOL :</STRONG>Vivekanandha High School</li>
+<li><strong>YEAR OF COMPLETION:</strong>2017</li>
+<li><STRONG>University/Board: </STRONG>Board Of Secondary Education</li>
+</ul>
+</ol>
+</article>
+<!-- </div>
+<div> -->
+<div>
+<article class="about-info">
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>Programming Languages: C, Java</li>
+            <li>Web Technologies: HTML5, CSS3, JavaScript</li>
+            <li>Query Languages: SQL, PLSQL</li>
+            <li>Database: Oracle, MySQL</li>
+            <li>Frameworks: Spring, Hibernate, Bootstrap</li>
+            <li>Application Server: Tomcat 9</li>
+            <li>Tools and Utilities: VS code, Eclipse, SQL plus, Turbo C++, Notepad, MS Office</li>
+        </ul>
+        <h3>Soft Skills</h3>
+        <ul>
+            <li>Time Management</li>
+            <li>Communication and Teamwork</li>
+            <li>Flexibility and Adaptability</li>
+            <li>Problem-Solving</li>
+        </ul>
+        <h3>Strengths</h3>
+        <ul>
+            <li>Creative and Self-motivated</li>
+            <li>Interpersonal Skills</li>
+        </ul>
+         <a href="#tours" class="btn">read more.......</a>
+        </article> </div>
+<!-- </div>
+ -->
+
+      </div>
+</section>
+<!-- //....................................................Technical Skills..................................... -->
+    <section class="section services" id="services">
+      <div class="section-title">
+        <h2>Technical<span>Skills</span></h2>
+      </div>
+      <div class="section-center services-center">
+        <article class="service">
+          <span class="service-icon"><i class="fab fa-html5"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">HTML</h4>
+            <p class="service-text">
+            I possess strong HTML proficiency, adept in semantic structuring,
+ form implementation, and multimedia integration. Expertise extends to HTML5 
+with focus on performance optimization and accessibility. Applied skills in diverse projects,
+ ensuring user-friendly and visually appealing websites.
+            </p>
+          </div>
+        </article>
+
+        <article class="service">
+          <span class="service-icon"><i class="fab fa-css3"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">CSS</h4>
+            <p class="service-text">
+              I excel in CSS, demonstrating expertise in styling and layout techniques for seamless web design.
+ Proficient in leveraging CSS3 features, including animations and responsive design, 
+to enhance user experiences. Applied knowledge extensively to create visually appealing and modern websites.
+            </p>
+          </div>
+        </article>
+
+        <article class="service">
+          <span class="service-icon"><i class="fab fa-js-square fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">Javascript</h4>
+            <p class="service-text">
+              I possess strong JavaScript proficiency, adept in building interactive and dynamic web applications.
+ Experienced in DOM manipulation, event handling, and asynchronous programming for seamless user experiences. Applied
+ skills to create responsive and feature-rich websites, demonstrating a solid understanding of modern JavaScript concepts.
+            </p>
+          </div>
+        </article>
+</article>
+        <article class="service">
+          <span class="service-icon"><i class="fab fa-java fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">Java</h4>
+            <p class="service-text">
+             As a Java enthusiast, I bring a solid foundation in programming, emphasizing versatility and scalability. 
+Proficient in backend development, database integration, and creating user-friendly applications. Skilled in key Java concepts,
+ including object-oriented programming, collections,
+ and exception handling, ready to contribute effectively and learn rapidly in a dynamic environment
+            </p>
+          </div>
+        </article>
+         <article class="service">
+          <span class="service-icon"><i class="fas fa-code fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">C-language</h4>
+            <p class="service-text">
+            I'm well-versed in C-language programming, demonstrating proficiency in building efficient and logical solutions. 
+From crafting algorithms to manipulating data, I bring a solid foundation 
+in code development. With a strong grasp of C's fundamentals, I contribute effectively to deliver impactful results.
+            </p>
+          </div>
+        </article>
+         <article class="service">
+          <span class="service-icon"><i class="fas fa-code fa-fw"></i></span>
+          <div class="service-info">
+            <h4 class="service-title">SQL and PL/SQL</h4>
+            <p class="service-text">
+            Possessing a strong foundation in SQL and PL/SQL, I am proficient in designing efficient database solutions,
+ optimizing queries for enhanced performance, and demonstrating expertise in crafting logical data manipulation procedures, 
+contributing to impactful results in database management.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+<!--.......................................................My projets..........................-->
+    <section class="section" id="tours">
+      <div class="section-title">
+        <h2>My<span>Projects</span></h2>
+      </div>
+
+      <div class="section-center featured-center">
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzTO4lFCOCDvo3SlcBHM7G0SjyeFncgqpthQ&usqp=CAU"
+              class="tour-img"
+              alt=""
+            />
+            <!-- <p class="tour-date">august 26th, 2020</p> -->
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">
+              <h4>Teacher Appreciation Website</h4>
+            </div>
+            <p>
+              This HTML program creates a webpage dedicated to Teachers' Day, incorporating a dynamic marquee with a heartfelt message,
+ a grid of images expressing gratitude, and additional content honoring Dr. Sarvepalli Radhakrishnan. The program was personally written 
+for a teacher as a special tribute on Teachers' Day.
+            </p>
+            <div class="tour-footer">
+              <p>
+                <span><i class="fas fa-code"></i></span> HTML
+              </p>
+              <p>CSS</p>
+              <p>....</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img
+              src="data:image/jpeg;base64,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"
+              class="tour-img"
+              alt=""
+            />
+          </div>
+          <div class="tour-info">
+            <h4>Weather Application</h4>
+            <p>
+              Explore my Weather Application, a blend of HTML, CSS, and JavaScript, offering a stylish interface with dynamic background images 
+that change based on real-time weather conditions. Input your city for instant updates on temperature, weather descriptions, and more.
+ With a user-friendly design, this app seamlessly combines functionality and aesthetics for an immersive weather-checking experience. 
+Whether you're a weather enthusiast or seeking a visually appealing forecast, enjoy the perfect blend of style and information.
+            </p>
+            <div class="tour-footer">
+              <p>
+                <span><i class="fas fa-code"></i></span> HTML
+              </p>
+              <p>CSS</p>
+              <p>JAVA SCRIPT</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tour-card">
+          <div class="tour-img-container">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMs8KI_8uIOrgeD4fXTYbg2ChefL9SzPrOwTspfZXVLR5N5S34X57GwMGqreQ-wTdknZQ&usqp=CAU"
+              class="tour-img"
+              alt=""
+            />
+            <!-- <p class="tour-date">september 15th, 2020</p> -->
+          </div>
+          <div class="tour-info">
+            <h4>CALCULATOR</h4>
+            <p>
+              This HTML, CSS, and JavaScript code creates a simple calculator web application.
+ The HTML structure includes a container div with a text input for displaying input and output.
+ JavaScript functions handle user interactions and calculations, while the CSS file provides styling for a visually appealing design with responsive buttons.
+ Users can perform basic arithmetic operations by clicking the interactive buttons.
+            </p>
+            <div class="tour-footer">
+              <p>
+                <span><i class="fas fa-map"></i></span>HTML
+              </p>
+              <p>CSS</p>
+              <p>JAVA SCRIPT</p>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+    </section>
+
+    <footer class="section footer">
+      <ul class="footer-links">
+        <li>
+          <a href="#home" class="footer-link">Career-Objective</a>
+        </li>
+        <li>
+          <a href="#about" class="footer-link">About</a>
+        </li>
+        <li>
+          <a href="#services" class="footer-link">Technical-Skills</a>
+        </li>
+        <li>
+          <a href="#featured" class="footer-link">Projects</a>
+        </li>
+      </ul>
+      <ul class="footer-icons">
+        <li>
+          <a href="https://www.instagram.com/the.javatalks/#" target="_blank" class="footer-icon"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/kishore-gudla-64b177251" target="_blank" class="footer-icon"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a href="https://github.com/kishore1g" target="_blank" class="footer-icon"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+      </ul>
+      <p class="copyright">
+        Email-kshrgdl@gmail.com <br>
+        <span id="date"></span> contact:6305656187
+      </p>
+    </footer>
+  </body>
+</html>
+
